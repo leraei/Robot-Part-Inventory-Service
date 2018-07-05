@@ -1,5 +1,4 @@
-Robot Part Inventory Service
-=================
+# Robot Part Inventory Service
 
 ## Abstract
 
@@ -80,25 +79,25 @@ At the moment we just need two tables in our database:
 
 ## Possible scalability and high availability problems
  
- This service is very simple in its current state. Till now there are no thoughts spend on scalability or high availability.
+This service is very simple in its current state. Till now there are no thoughts spend on scalability or high availability.
  
- ###What can be done generally
- "The Art of Scalability" describes scalability using a cube model. The "Scale Cube" is composed of an X-axis, Y-axis, and Z-axis.
+### What can be done generally
+"The Art of Scalability" describes scalability using a cube model. The "Scale Cube" is composed of an X-axis, Y-axis, and Z-axis.
 
- ####X-axis: Scaling by splitting the service
- I think with its current feature-set, the robot part service is micro enough and needs no further splitting
- ####Y-axis: Scaling by running multiple load-balanced instances 
- Thats something we should definetly do! I would suggest a minimum of four instances for productive use. More if needed. This point also applies to High availabilty.
- ####Z:axis: Scaling by splitting data
- One PostgeSQL would not be enough. We need a database cluster. This point also applies to High availabilty 
+#### X-axis: Scaling by splitting the service
+I think with its current feature-set, the robot part service is micro enough and needs no further splitting
+#### Y-axis: Scaling by running multiple load-balanced instances 
+Thats something we should definetly do! I would suggest a minimum of four instances for productive use. More if needed. This point also applies to High availabilty.
+#### Z:axis: Scaling by splitting data
+One PostgeSQL would not be enough. We need a database cluster. This point also applies to High availabilty 
 
  
-###Current Problems with scalability
+### Current Problems with scalability
  - We can't scale to more instances due to the in-memory database
  - Currently there are no database performance improvements, like an index on serialNumber
  - The performance is not measured, we don't know about any performance leaks
  
-###What must be done
+### What must be done
  - Migrate to a relational non-in-memory-database
  - Measure performance with performance tests
  
