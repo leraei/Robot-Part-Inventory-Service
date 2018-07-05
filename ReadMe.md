@@ -22,7 +22,7 @@ Rest-Controller <--> Service <--> ORM-Layer <--> Database
 Clone the repository:
 
 ```bash
-$ git clone ssh://git@s
+$ git clone https://github.com/leraei/Robot-Part-Inventory-Service.git
 ```
 
 Build the project<br/>
