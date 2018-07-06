@@ -44,7 +44,7 @@ Now you can run the service with:
 $ ./gradlew bootRun
 ```
 
-on success you can open [http://localhost:8002/manage/health](http://localhost:8002/manage/health) returning 200 and JSON response including "status":"UP".
+on success you can open [http://localhost:8002/actuator/health](http://localhost:8002/actuator/health) returning 200 and JSON response including "status":"UP".
 
 ## Testing
 
